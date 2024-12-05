@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='register.css')}}">
+    <title>Register</title>
+</head>
+<body>
+    <header>
+        <img class="image1" src="https://www.gov.za/themes/custom/tailwindcss/images/flag-new.jpg" alt="SA Flag">
+        <h1>Welcome to Hlanganani Agri Farming</h1>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li><button><a href="{{url_for('index')}}">Logout</button></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <form class="form-container" method="POST" action="{{ url_for('register') }}">
+            <h2>Register Your Details</h2>
+            <label for="name">Name</label>
+            <input class="input1" id="name" type="text" name="name" placeholder="Enter your name" maxlength="50" required>
+
+            <label for="surname">Surname</label>
+            <input class="input1" id="surname" type="text" name="surname" placeholder="Enter your surname" maxlength="30" required>
+
+            <label for="dateofbirth">Date of Birth</label>
+            <input class="input1" id="dateofbirth" type="date" name="dateofbirth" required>
+
+            <label for="id">ID Number</label>
+            <input class="input1" id="id" type="text" name="id" placeholder="Enter your ID number" maxlength="13" required>
+
+            <label>Gender</label>
+            <div class="radio-group">
+                <input class="input2" type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label>
+                <input class="input2" type="radio" id="female" name="gender" value="female" required>
+                <label for="female">Female</label>
+            </div><br>
+
+            <label>Marital Status</label>
+            <div class="radio-group">
+                <input class="input2" type="radio" id="single" name="maritalstatus" value="single" required>
+                <label for="single">Single</label>
+                <input class="input2" type="radio" id="married" name="maritalstatus" value="married" required>
+                <label for="married">Married</label>
+                <input class="input2" type="radio" id="divorced" name="maritalstatus" value="divorced" required>
+                <label for="divorced">Divorced</label>
+            </div>
+
+            <label for="province">Province</label>
+            <select class="select1" id="province" name="province" required>
+                <option value="" disabled selected>Select</option>
+                <option value="eastern-cape">Eastern Cape</option>
+                <option value="free-state">Free State</option>
+                <option value="gauteng">Gauteng</option>
+                <option value="kwazulu-natal">KwaZulu-Natal</option>
+                <option value="limpopo">Limpopo</option>
+                <option value="mpumalanga">Mpumalanga</option>
+                <option value="northern-cape">Northern Cape</option>
+                <option value="north-west">North West</option>
+                <option value="western-cape">Western Cape</option>
+            </select>
+
+            <label for="city">City</label>
+            <input class="input1" id="city" type="text" name="city" placeholder="Enter your city" required>
+
+            <label for="address">Address</label>
+            <input class="input1" id="address" type="text" name="address" placeholder="Enter your address" required>
+
+            <label for="postalcode">Postal Code</label>
+            <input class="input1" id="postalcode" type="number" name="postalcode" placeholder="Enter your postal code" required>
+
+            <label for="email">Email</label>
+            <input class="input1" id="email" type="email" name="email" placeholder="Enter your email" required>
+
+            <label for="cellnumber">Cellphone Number</label>
+            <input class="input1" id="cellnumber" type="text" name="cellnumber" placeholder="Enter your cellphone number" maxlength="10" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Canning Solutions. All Rights Reserved. | Contact: <a href="mailto:nuhealth1st@gmail.com">nuhealth1st@gmail.com</a> / 067 236 4162</p>
+    </footer>
+</body>
+</html>
